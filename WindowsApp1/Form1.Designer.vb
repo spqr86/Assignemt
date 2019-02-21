@@ -60,6 +60,8 @@ Partial Class lblMathsforIT
         Me.lblNew = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmbValidCourses = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -411,12 +413,32 @@ Partial Class lblMathsforIT
         Me.Label1.TabIndex = 39
         Me.Label1.Text = "STUDENT GRID"
         '
+        'cmbValidCourses
+        '
+        Me.cmbValidCourses.FormattingEnabled = True
+        Me.cmbValidCourses.Location = New System.Drawing.Point(1121, 74)
+        Me.cmbValidCourses.Name = "cmbValidCourses"
+        Me.cmbValidCourses.Size = New System.Drawing.Size(121, 23)
+        Me.cmbValidCourses.TabIndex = 40
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(1116, -1)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(137, 72)
+        Me.Label5.TabIndex = 41
+        Me.Label5.Text = "Courses that " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "are valide for " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "that student:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'lblMathsforIT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.ClientSize = New System.Drawing.Size(1154, 519)
+        Me.ClientSize = New System.Drawing.Size(1371, 500)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.cmbValidCourses)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnAdd)
@@ -503,4 +525,6 @@ Partial Class lblMathsforIT
     Friend WithEvents btnAdd As Button
     Friend WithEvents txtAmountOfStudent As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents cmbValidCourses As ComboBox
+    Friend WithEvents Label5 As Label
 End Class

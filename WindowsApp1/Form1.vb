@@ -44,7 +44,7 @@ Public Class lblMathsforIT
             calculateCAO(mathResult) + calculateCAO(databaseResult) + calculateCAO(communicationResult) + calculateCAO(workExperienceResult)
             DataGridView1.Rows(i).Cells(12).Value = totalResult
         Next
-
+        adapter.SelectCommand = New OleDbCommand("Select Course from [CAO Points 2018] where Points < " & totalResult, connection)
     End Sub
 
     Private Sub btnOneStudent_Click(sender As Object, e As EventArgs) Handles btnOneStudent.Click
@@ -58,7 +58,7 @@ Public Class lblMathsforIT
         DataGridView1.DataSource = dataSet.Tables("Search Result")
         DataGridView1.Columns.Add("Total Cao", "Total Cao")
 
-            operatingResult = dataSet.Tables("Search Result").Rows(0).Item(3)
+        operatingResult = dataSet.Tables("Search Result").Rows(0).Item(3)
         networkingResult = dataSet.Tables("Search Result").Rows(0).Item(4)
         computerResult = dataSet.Tables("Search Result").Rows(0).Item(5)
         virtualisationResult = dataSet.Tables("Search Result").Rows(0).Item(6)
@@ -70,6 +70,8 @@ Public Class lblMathsforIT
         totalResult = calculateCAO(operatingResult) + calculateCAO(networkingResult) + calculateCAO(computerResult) + calculateCAO(virtualisationResult) + calculateCAO(programmingResult) +
         calculateCAO(mathResult) + calculateCAO(databaseResult) + calculateCAO(communicationResult) + calculateCAO(workExperienceResult)
         DataGridView1.Rows(0).Cells(12).Value = totalResult
+
+
     End Sub
 
     Private Sub btnSearchLike_Click(sender As Object, e As EventArgs) Handles btnSearchLike.Click
