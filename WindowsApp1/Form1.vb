@@ -55,7 +55,20 @@ Public Class lblMathsforIT
         adapter.SelectCommand = New OleDbCommand("Select * from [5M0536 Module Results] where PPSN = '" & text & "'", connection)
         adapter.Fill(dataSet, "Search Result")
         DataGridView1.DataSource = dataSet.Tables("Search Result")
+        DataGridView1.Columns.Add("Total Cao", "Total Cao")
 
+        operatingResult = dataSet.Tables("Search Result").Rows(0).Item(3)
+        networkingResult = dataSet.Tables("Search Result").Rows(0).Item(4)
+        computerResult = dataSet.Tables("Search Result").Rows(0).Item(5)
+        virtualisationResult = dataSet.Tables("Search Result").Rows(0).Item(6)
+        programmingResult = dataSet.Tables("Search Result").Rows(0).Item(7)
+        mathResult = dataSet.Tables("Search Result").Rows(0).Item(8)
+        databaseResult = dataSet.Tables("Search Result").Rows(0).Item(9)
+        communicationResult = dataSet.Tables("Search Result").Rows(0).Item(10)
+        workExperienceResult = dataSet.Tables("Search Result").Rows(0).Item(11)
+        totalResult = calculateCAO(operatingResult) + calculateCAO(networkingResult) + calculateCAO(computerResult) + calculateCAO(virtualisationResult) + calculateCAO(programmingResult) +
+        calculateCAO(mathResult) + calculateCAO(databaseResult) + calculateCAO(communicationResult) + calculateCAO(workExperienceResult)
+        DataGridView1.Rows(0).Cells(12).Value = totalResult
     End Sub
 
     Private Sub btnSearchLike_Click(sender As Object, e As EventArgs) Handles btnSearchLike.Click
@@ -111,3 +124,5 @@ Public Class lblMathsforIT
     End Function
 
 End Class
+
+'hello world
